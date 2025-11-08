@@ -12,8 +12,8 @@ SNID Docker requires Docker and a working X11 client to run. We provide for Linu
 
 For **Windows 10 and 11**, we recommend installing WSL and [running Docker from WSL](https://docs.docker.com/desktop/features/wsl/). Recent WSL builds [natively support X11 applications](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps), so the installation instructions should be identical to following instructions for Linux from within WSL. However, this is untested by the authors.
 
-1. **Docker**
-2. 
+### **Docker**
+
 Download and install [Docker](https://docs.docker.com/get-started/get-docker/). 
 
 On **Linux**, you will also need to add your user to the docker group:
@@ -22,7 +22,8 @@ After that, you will need to **completely log out and log back in, or reboot you
 
 On shared computing resources, [rootless Docker](https://docs.docker.com/engine/security/rootless/), or containerization solutions, such as [Podman](https://podman.io/), will be required. Please follow the corresponding installation instructions for those. If using such solutions, you may need to adjust the contents of ```run_snid.sh``` to invoke the correct containerization platform.
 
-2. **X server** 
+### **X server** 
+
  - Linux: Nearly all typical Linux distributions support X11 out of the box. If yours does not, contact your administrator.
  - MacOS: Download and install [XQuartz](https://www.xquartz.org). You will need to **completely reboot after installation before proceeding.**
 
