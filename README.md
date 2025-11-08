@@ -42,7 +42,7 @@ On **Linux**, you will also need to add your user to the docker group:
 ```sudo usermod -aG docker $USER```
 After that, you will need to **completely log out and log back in, or reboot your machine**.
 
-On shared computing resources, [rootless Docker](https://docs.docker.com/engine/security/rootless/), or containerization solutions, such as [Podman](https://podman.io/), will be required. Please follow the corresponding installation instructions for those. If using such solutions, you may need to adjust the contents of ```run_snid.sh``` to invoke the correct containerization platform.
+On shared computing resources, [rootless Docker](https://docs.docker.com/engine/security/rootless/), or other containerization solutions such as [Podman](https://podman.io/), will be required. Please follow the corresponding installation instructions for those. If using such solutions, you may need to adjust the contents of ```run_snid.sh``` to invoke the correct containerization platform.
 
 ### **X server** 
 
