@@ -13,6 +13,7 @@ SNID Docker requires Docker and a working X11 client to run. We provide for Linu
 For **Windows 10 and 11**, we recommend installing WSL and [running Docker from WSL](https://docs.docker.com/desktop/features/wsl/). Recent WSL builds [natively support X11 applications](https://learn.microsoft.com/en-us/windows/wsl/tutorials/gui-apps), so the installation instructions should be identical to following instructions for Linux from within WSL. However, this is untested by the authors.
 
 1. **Docker**
+2. 
 Download and install [Docker](https://docs.docker.com/get-started/get-docker/). 
 
 On **Linux**, you will also need to add your user to the docker group:
