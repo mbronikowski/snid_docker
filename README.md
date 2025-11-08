@@ -4,7 +4,29 @@ Another Docker wrapper for the [SuperNova IDentification](https://people.lam.fr/
 
 By default, the Dockerfile will build an image with [Super-SNID Templates](https://github.com/dkjmagill/QUB-SNID-Templates). If you would like to build with other templates instead, some adjustments will be necessary.
 
+
 # Instructions
+
+## Quick start guide
+
+```
+# 1. Clone the repository
+git clone https://github.com/mbronikowski/snid_docker
+cd snid_docker
+
+# 2. Build the Docker image
+docker buildx build --platform linux/amd64 --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -t snid:5.0-supersnid --load .
+
+# 3. Make the wrapper script accessible
+# Either copy it to a directory in your PATH or create an alias
+cp run_snid.sh ~/bin/
+# or
+alias run_snid='/path/to/snid_docker/run_snid.sh'
+
+# 4. Run SNID on a lightcurve file
+run_snid.sh path/to/lightcurve.dat
+```
+
 
 ## Requirements
 
@@ -33,15 +55,11 @@ Download this repository with
 
 ```git clone https://github.com/mbronikowski/snid_docker```
 
-and ```cd``` into the directory. On **AMD64/X86-64 processors** (Linux, Windows+WSL, older Apple computers), run:
-
-```docker buildx build --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -t snid:5.0-supersnid --load .```
-
-On newer **Apple Silicon** (M1, M2, M3 etc.) processors, instead run:
+and ```cd``` into the directory. Then run:
 
 ```docker buildx build --platform linux/amd64 --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -g) -t snid:5.0-supersnid --load .```
 
-Finally, just copy ```run_snid.sh``` into a directory listed in your $PATH or create an alias to it. Feel free to rename the script.
+to build the Docker image. Finally, just copy ```run_snid.sh``` into a directory listed in your $PATH or create an alias to it. Feel free to rename the script.
 
 ## Running and usage
 
