@@ -1,6 +1,6 @@
 # SNID Docker
 
-Another Docker wrapper for the [SuperNova IDentification](https://people.lam.fr/blondin.stephane/software/snid/) package by Stephane Blondin, inspired by [Robert Fisher's repository of the same name](https://github.com/rtfisher/snid_docker). This version aims to be as seamless in use as possible once set up, primarily by not moving the workflow into the container interactively. 
+Another Docker wrapper for the [SuperNova IDentification](https://people.lam.fr/blondin.stephane/software/snid/) package by Stéphane Blondin, inspired by [Robert Fisher's repository of the same name](https://github.com/rtfisher/snid_docker). This version aims to be as seamless in use as possible once set up, primarily by not moving the workflow into the container interactively. 
 
 By default, the Dockerfile will build an image with [Super-SNID Templates](https://github.com/dkjmagill/QUB-SNID-Templates). If you would like to build with other templates instead, some adjustments will be necessary.
 
