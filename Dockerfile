@@ -61,7 +61,8 @@ WORKDIR ${SNID_DIR}
 RUN make && \
     make install && \
     cp snid plotlnw logwave /usr/local/bin/ && \
-    chown -R ${USER_NAME}:${GROUP_NAME} ${SNID_DIR}
+    ACTUAL_GROUP_NAME=$(getent group ${GROUP_ID} | cut -d: -f1) && \
+    chown -R "${USER_NAME}:${ACTUAL_GROUP_NAME}" "${SNID_DIR}"
 USER ${USER_NAME}
 WORKDIR ${HOME_DIR}/workdir
 
