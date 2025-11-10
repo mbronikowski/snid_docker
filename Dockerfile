@@ -19,7 +19,11 @@ ARG GROUP_ID=1000
 ARG USER_NAME=sniduser
 ARG GROUP_NAME=snidgroup
 
-RUN groupadd -g ${GROUP_ID} ${GROUP_NAME} && \
+RUN if ! getent group ${GROUP_ID} >/dev/null; then \
+        groupadd -g ${GROUP_ID} ${GROUP_NAME}; \
+    else \
+        GROUP_NAME=$(getent group ${GROUP_ID} | cut -d: -f1); \
+    fi && \
     useradd -m -u ${USER_ID} -g ${GROUP_ID} ${USER_NAME}
 
 ENV HOME_DIR=/home/${USER_NAME}
