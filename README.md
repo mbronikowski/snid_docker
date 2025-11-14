@@ -47,7 +47,7 @@ On shared computing resources, [rootless Docker](https://docs.docker.com/engine/
 ### **X server** 
 
  - Linux: Nearly all typical Linux distributions support X11 out of the box. If yours does not, contact your administrator.
- - MacOS: Download and install [XQuartz](https://www.xquartz.org). You will need to **completely reboot after installation before proceeding.**
+ - MacOS: Download and install [XQuartz](https://www.xquartz.org). You will need to **completely reboot after installation before proceeding.** You must then navigate to XQuartz -> Preferences -> Security, and enable "Allow connections from network clients".
 
 ## Installation
 
