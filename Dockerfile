@@ -24,7 +24,9 @@ RUN if ! getent group ${GROUP_ID} >/dev/null; then \
     else \
         GROUP_NAME=$(getent group ${GROUP_ID} | cut -d: -f1); \
     fi && \
-    useradd -m -u ${USER_ID} -g ${GROUP_ID} ${USER_NAME}
+    useradd -m -u ${USER_ID} -g ${GROUP_ID} ${USER_NAME}  && \
+    mkdir /home/${USER_NAME}/workdir && \
+    chown -R ${USER_ID}:${GROUP_ID} /home/${USER_NAME}
 
 ENV HOME_DIR=/home/${USER_NAME}
 
